@@ -1,0 +1,60 @@
+.dashboardWrap {
+  padding: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:18px;
+}
+.controls a {
+  margin-left:10px;
+  text-decoration:none;
+}
+.grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap:12px;
+}
+.gridTwo {
+  display:grid;
+  grid-template-columns: 1fr 380px;
+  gap: 18px;
+}
+.postForm input, .postForm textarea {
+  width:100%;
+  padding:8px 10px;
+  margin-bottom:8px;
+  border-radius:6px;
+  border:1px solid #e5e7eb;
+}
+.btnPrimary {
+  background: linear-gradient(90deg,#0ea5a4,#06b6d4);
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btnGhost {
+  background: transparent;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.profileWrap {
+  max-width: 640px;
+  margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.center {
+  text-align:center;
+  padding: 40px 0;
+}
+.adminWrap {
+  padding: 28px;
+}
