@@ -3,14 +3,15 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
+//you need to add your details below
 const firebaseConfig = {
-  apiKey: "AIzaSyBsow7xQ_1e6hfMPN1mfRGx3OeEdKEmAM8",
-  authDomain: "jobsprovider-b6914.firebaseapp.com",
-  projectId: "jobsprovider-b6914",
-  storageBucket: "jobsprovider-b6914.appspot.com", // fixed
-  messagingSenderId: "1038531452654",
-  appId: "1:1038531452654:web:9f4bff74c738d7a1269dff",
-  measurementId: "G-Q0QC3X6LWV"
+  apiKey: "*",
+  authDomain: "*",
+  projectId: "*",
+  storageBucket: "*", // fixed
+  messagingSenderId: "*",
+  appId: "*",
+  measurementId: "*"
 };
 
 const app = initializeApp(firebaseConfig);
