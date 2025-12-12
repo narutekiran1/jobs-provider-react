@@ -1,0 +1,58 @@
+.dashboard-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #111;
+}
+
+.no-apps {
+  font-size: 18px;
+  color: #666;
+  padding: 20px 0;
+}
+
+.application-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.application-item {
+  background: #f9fafb;
+  padding: 18px 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.application-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+}
+
+.app-job-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.app-job-id {
+  font-size: 15px;
+  color: #6b7280;
+}
+
+.app-date {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #4b5563;
+}

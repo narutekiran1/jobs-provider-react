@@ -1,0 +1,74 @@
+.users-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.users-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.07);
+}
+
+.user-row {
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-row:last-child {
+  border-bottom: none;
+}
+
+/* Left side text */
+.user-info {
+  line-height: 1.4;
+}
+
+.user-info h3 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.user-info p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+/* Role dropdown */
+.role-select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Delete button */
+.delete-btn {
+  background: #ffbdbd;
+  border: none;
+  padding: 6px 16px;
+  margin-left: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background: #ff9090;
+}
+
+/* Buttons wrapper */
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

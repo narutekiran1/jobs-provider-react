@@ -1,39 +1,37 @@
-import React from "react";
+// src/pages/Home.jsx
 import { Link } from "react-router-dom";
-import styles from "../styles/jobs.module.css";
-import { motion } from "framer-motion";
+import styles from "../styles/home.module.css";
 
 export default function Home() {
   return (
-    <motion.main
-      className={styles.homeWrap}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div className={styles.page}>
+      <header className={styles.navGap} />
+
       <section className={styles.hero}>
-        <h1>HireHub — Find your next job</h1>
-        <p>Search thousands of jobs, build your resume and apply quickly.</p>
-        <div className={styles.ctaRow}>
-          <Link to="/jobs" className={styles.btnPrimary}>Browse Jobs</Link>
-          <Link to="/register" className={styles.btnGhost}>Create Profile</Link>
+        <div className={styles.heroInner}>
+          <h1 className={styles.title}>HireHub — Find your next job</h1>
+          <p className={styles.subtitle}>
+            Search thousands of jobs, build your resume and apply quickly.
+          </p>
+
+          <div className={styles.ctaRow}>
+            <Link to="/jobs" className={styles.btnPrimary}>Browse Jobs</Link>
+            <Link to="/profile" className={styles.btnGhost}>Create Profile</Link>
+          </div>
         </div>
       </section>
 
-      <section className={styles.features}>
-        <article>
+      <section className={styles.featuresWrap}>
+        <div className={styles.feature}>
           <h3>Upload Resume</h3>
           <p>Store your resume securely and apply in one click.</p>
-        </article>
-        <article>
-          <h3>Saved Jobs</h3>
-          <p>Keep a list of jobs you want to revisit later.</p>
-        </article>
-        <article>
+        </div>
+
+        <div className={styles.feature}>
           <h3>Company Dashboard</h3>
-          <p>Admins can post jobs and view applicants.</p>
-        </article>
+          <p>Admins can post jobs and view applicants (Admin only).</p>
+        </div>
       </section>
-    </motion.main>
+    </div>
   );
 }

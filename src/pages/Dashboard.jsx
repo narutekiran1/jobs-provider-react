@@ -1,54 +1,74 @@
-import React, { useEffect, useState } from "react";
-import styles from "../styles/dashboard.module.css";
-import { useAuth } from "../context/AuthContext";
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
-import JobCard from "../components/JobCard";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import "../styles/dashbord.css";
 
 export default function Dashboard() {
-  const { user, role } = useAuth();
-  const [appliedJobs, setAppliedJobs] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { user, loading } = useAuth();
+  const [applications, setApplications] = useState([]);
+  const [loadingApps, setLoadingApps] = useState(true);
 
   useEffect(() => {
-    // fetch applied jobs if user exists (example collection 'applications' with field uid)
-    if (!user) return;
-    (async () => {
-      setLoading(true);
-      try {
-        const q = query(collection(db, "applications"), where("uid", "==", user.uid));
-        const snap = await getDocs(q);
-        setAppliedJobs(snap.docs.map(d => ({ id: d.id, ...d.data() })));
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
+    if (loading) return;
+    if (!user) {
+      setApplications([]);
+      setLoadingApps(false);
+      return;
+    }
+
+    setLoadingApps(true);
+    const q = query(
+      collection(db, "applications"),
+      where("userId", "==", user.uid)
+    );
+
+    const unsub = onSnapshot(
+      q,
+      (snap) => {
+        const list = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+        setApplications(list);
+        setLoadingApps(false);
+      },
+      (err) => {
+        console.error("applications listener error", err);
+        setLoadingApps(false);
       }
-    })();
-  }, [user]);
+    );
+
+    return () => unsub();
+  }, [user, loading]);
+
+  if (loading || loadingApps) return <p>Loading dashboard...</p>;
 
   return (
-    <motion.div className={styles.dashboardWrap} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      <header className={styles.header}>
-        <h2>Welcome{user ? `, ${user.email.split("@")[0]}` : ""}</h2>
-        <div className={styles.controls}>
-          {role === "admin" && <Link to="/admin" className={styles.btnGhost}>Admin</Link>}
-          <Link to="/profile" className={styles.btnPrimary}>Profile</Link>
-        </div>
-      </header>
+    <div className="dashboard-container">
+      <h2 className="dashboard-title">Your Applications</h2>
 
-      <section>
-        <h3>Your Applications</h3>
-        {loading ? <p>Loading...</p> :
-          appliedJobs.length ? (
-            <div className={styles.grid}>
-              {appliedJobs.map(a => <JobCard key={a.id} job={a.job || a} compact />)}
-            </div>
-          ) : <p>You haven't applied to any jobs yet.</p>
-        }
-      </section>
-    </motion.div>
+      {applications.length === 0 ? (
+        <p className="no-apps">You have not applied to any jobs yet.</p>
+      ) : (
+        <ul className="application-list">
+          {applications.map((a) => (
+            <li className="application-item" key={a.id}>
+              <div className="app-job-title">
+                {a.job?.title || "Job ID: " + a.jobId}
+              </div>
+
+              <div className="app-job-id">
+                Company: {a.job?.company || "Unknown"}
+              </div>
+
+              <div className="app-date">
+                Applied on:{" "}
+                {a.appliedAt
+                  ? new Date(a.appliedAt).toLocaleString()
+                  : "Unknown date"}
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }

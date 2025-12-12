@@ -1,12 +1,10 @@
-import React from "react";
-import styles from "../styles/jobs.module.css";
+// src/components/Loader.jsx
+import  "../styles/loader.css";
 
-export default function Loader({ small }) {
+export default function Loader() {
   return (
-    <div className={small ? styles.loaderSmall : styles.loader}>
-      <div className={styles.dot} />
-      <div className={styles.dot} />
-      <div className={styles.dot} />
+    <div className="loader-wrapper">
+      <div className="loader"></div>
     </div>
   );
 }

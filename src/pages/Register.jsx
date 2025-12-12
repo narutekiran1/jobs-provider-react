@@ -25,15 +25,22 @@ export default function Register() {
           validationSchema={schema}
           onSubmit={async (values, { setSubmitting, setErrors }) => {
             try {
-              const userCred = await createUserWithEmailAndPassword(auth, values.email, values.password);
-              // create basic user doc with role 'user'
+              const userCred = await createUserWithEmailAndPassword(
+                auth,
+                values.email,
+                values.password
+              );
+
               await setDoc(doc(db, "users", userCred.user.uid), {
                 name: values.name,
                 email: values.email,
                 role: "user",
                 createdAt: Date.now(),
               });
-              navigate("/dashboard");
+
+              alert("Account created successfully!");
+              navigate("/login"); // redirect to login
+
             } catch (err) {
               setErrors({ submit: err.message });
             } finally {

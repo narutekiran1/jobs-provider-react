@@ -1,0 +1,56 @@
+.applications-page {
+  padding: 30px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.applications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.application-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 18px 22px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.application-info h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #0b345a;
+}
+
+.application-info p {
+  margin: 4px 0 0;
+  color: #374151;
+}
+
+.delete-btn {
+  background: #f87171;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  background: #ef4444;
+}
+
+.empty {
+  color: #64748b;
+  font-size: 16px;
+  padding-top: 10px;
+}

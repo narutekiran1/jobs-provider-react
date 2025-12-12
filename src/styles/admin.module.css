@@ -1,0 +1,99 @@
+/* src/styles/admin.module.css */
+
+.adminWrap {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 28px auto;
+  padding: 20px;
+}
+
+.sidebar {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.brand {
+  margin-bottom: 12px;
+  color: #0ea5a4;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.sideLink {
+  display: block;
+  padding: 8px 6px;
+  color: #0f172a;
+  text-decoration: none;
+  margin-bottom: 6px;
+  border-radius: 6px;
+}
+
+.sideLink:hover {
+  background: #f1f5f9;
+}
+
+.content {
+  background: transparent;
+}
+
+.lead { color: #475569; margin-bottom: 18px; }
+
+.cards { display: flex; gap: 16px; margin-top: 14px; }
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  flex: 1;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+.cardBtn {
+  margin-top: 10px;
+  display: inline-block;
+  background: #0ea5a4;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* Manage pages */
+.manageWrap { max-width: 1200px; margin: 20px auto; padding: 20px; }
+.formBox, .listBox { background: white; padding: 16px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,.06); margin-bottom: 16px; }
+.formGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.formGrid input, .formGrid textarea { padding: 10px; border: 1px solid #e5e7eb; border-radius: 8px; }
+.formGrid textarea { grid-column: 1 / -1; resize: vertical; }
+.formActions { grid-column: 1 / -1; display:flex; gap:8px; }
+
+.btnPrimary {
+  background: linear-gradient(90deg,#0ea5a4,#06b6d4);
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.btnGhost {
+  padding: 10px 12px;
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.itemList { list-style: none; margin: 0; padding: 0; }
+.itemRow { display:flex; justify-content: space-between; align-items: center; padding: 12px; border-bottom: 1px dashed #eef2f6; }
+.itemActions { display:flex; gap:8px; align-items:center; }
+
+.btnSmall { padding: 6px 10px; border-radius:6px; background:#eef2ff; text-decoration:none; color:#0369a1; border:none; }
+.btnDanger { padding: 6px 10px; border-radius:6px; background:#fee2e2; color:#b91c1c; border:none; cursor:pointer; }
+
+.meta { color:#6b7280; font-size:13px; margin-top:6px; }
+/* styles.module.css */
+.noListStyle {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

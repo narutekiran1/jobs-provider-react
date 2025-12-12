@@ -123,3 +123,131 @@
   .applyWrap { grid-template-columns: 1fr; }
   .gridTwo { grid-template-columns: 1fr; }
 }
+.card {
+  border: 1px solid #ececec;
+  padding: 20px;
+  width: 350px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.company {
+  color: #444;
+  font-size: 16px;
+}
+
+.location {
+  color: #666;
+}
+
+.salary {
+  font-weight: 600;
+  color: #008080;
+}
+
+.applyBtn {
+  margin-top: 10px;
+  background: teal;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.applyBtn:hover {
+  opacity: 0.8;
+}
+.applyWrap {
+  max-width: 1100px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.jobDetail {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.jobDetail h2 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  color: #0b345a;
+}
+
+.jobDetail p {
+  font-size: 16px;
+  color: #444;
+  margin: 5px 0;
+}
+
+.applyForm {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.applyForm h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #0b345a;
+}
+
+.applyForm input {
+  padding: 12px 14px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.2s;
+}
+
+.applyForm input:focus {
+  border-color: #009688;
+  box-shadow: 0 0 3px rgba(0,150,136,0.4);
+}
+
+.applyBtn {
+  background: #00695c;
+  color: white;
+  border: none;
+  padding: 14px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.applyBtn:hover {
+  background: #004d40;
+}
+
+.center {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 20px;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .applyWrap {
+    grid-template-columns: 1fr;
+  }
+}
